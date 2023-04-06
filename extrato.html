@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+    <button id="botaomover" onclick="funcaomove()"></button>
+	<div id="extrato">
+ <img  id="folhaextrato" src="folhaextrato.png" alt="">
+ <div id="extratodata"></div>
+<input type="text" id="extratodata"  disabled="true">
+<div id="extratohora"></div>
+<input type="text" id="extratohora"  disabled="true">
+
+<div id="extratoagencia"> AGENCIA: 0123</div>
+
+<div id="extratonumeroconta"></div>
+<input type="text" id="extratonumeroconta"  disabled="true">
+
+<div id="extratonomecliente"></div>
+<input type="text" id="extratonomecliente"  disabled="true">
+
+<div id="extratoparasimplesconferencia"> EXTRATO PARA SIMPLES CONFERENCIA </div>
+
+<div id="extratomovimentacao"> MOVIMENTAÇÃO</div>
+
+<div id="datamovimentacao1"></div>
+<input type="text" id="datamovimentacao1"  disabled="true">
+
+<div id="tipomovimentacao1"></div>
+<input type="text" id="tipomovimentacao1"  disabled="true">
+
+<div id="valormovimentacao1"></div>
+<input type="text" id="valormovimentacao1"  disabled="true">
+
+<div id="datamovimentacao2"></div>
+<input type="text" id="datamovimentacao2"  disabled="true">
+
+<div id="tipomovimentacao2"></div>
+<input type="text" id="tipomovimentacao2"  disabled="true">
+
+<div id="valormovimentacao2"></div>
+<input type="text" id="valormovimentacao2"  disabled="true">
+
+<div id="datamovimentacao3"></div>
+<input type="text" id="datamovimentacao3"  disabled="true">
+
+<div id="tipomovimentacao3"></div>
+<input type="text" id="tipomovimentacao3"  disabled="true">
+
+<div id="valormovimentacao3"></div>
+<input type="text" id="valormovimentacao3"  disabled="true">
+
+<div id="extratosaldototal"> SALDO TOTAL </div>
+
+<div id="saldoemdinheiro"></div>
+<input type="text" id="saldoemdinheiro"  disabled="true">
+
+<div id="informacoesfinais"> 
+    
+    Informações, reclamações, sugestões e elogios <br>
+    SAC CAIXA: 0800-726 0101<br>
+    Ouvidoria da CAIXA: 0800-725 7474<br>
+    www.caixa.gov.br<br>
+    <br><br>
+    CONHECE A NOVA TABELA DE TARIFAS NO SITE <br>
+    CAIXA.GOV.BR/VOCE <br>
+    CRIADO POR @FILIPETRAP
+
+
+
+</div>
+
+
+	</div>
+	
+</body>
+<style>
+
+#informacoesfinais {
+	position: absolute; 
+	left: 20px;   
+	top: 663px;   
+    width: 555px; height: 20px; font-size: 20px; text-align: center;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+	}
+
+#saldoemdinheiro {
+	position: absolute; 
+	left: 380px;   
+	top: 607px;   
+    width: 190px; height: 20px; font-size: 20px; text-align: right;
+	color: #080000; 
+	background-color:rgba(0, 0, 0, 0);
+    border: Transparent;
+	}
+
+#extratosaldototal {
+	position: absolute; 
+	left: 20px;   
+	top: 607px;   
+    width: 190px; height: 20px; font-size: 20px;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+
+#datamovimentacao1 {
+	position: absolute; 
+	left: 20px;   
+	top: 439px;   
+    width: 190px; height: 20px; font-size: 20px;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+    #tipomovimentacao1 {
+	position: absolute; 
+	left: 196px;   
+	top: 439px;   
+    width: 190px; height: 20px; font-size: 20px; text-align: center;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+    #valormovimentacao1 {
+	position: absolute; 
+	left: 380px;   
+	top: 439px;   
+    width: 190px; height: 20px; font-size: 20px; text-align: right;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+    #datamovimentacao2{
+	position: absolute; 
+	left: 20px;   
+	top: 480px;   
+    width: 190px; height: 20px; font-size: 20px;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+    #tipomovimentacao2{
+	position: absolute; 
+	left: 196px;   
+	top: 480px;   
+    width: 190px; height: 20px; font-size: 20px; text-align: center;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+    #valormovimentacao2{
+	position: absolute; 
+	left: 380px;   
+	top: 480px;   
+    width: 190px; height: 20px; font-size: 20px; text-align: right;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+
+    #datamovimentacao3{
+	position: absolute; 
+	left: 20px;   
+	top: 520px;   
+    width: 190px; height: 20px; font-size: 20px;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+    #tipomovimentacao3{
+	position: absolute; 
+	left: 196px;   
+	top: 520px;   
+    width: 190px; height: 20px; font-size: 20px; text-align: center;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+    #valormovimentacao3{
+	position: absolute; 
+	left: 380px;   
+	top: 520px;   
+    width: 190px; height: 20px; font-size: 20px; text-align: right;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+#extrato {
+	position: absolute; 
+	left: 0px;   
+	top: 0px;   
+width: 601px; height: 899px;  font-size: 50px;
+	color: #ffffff;
+	background-color:rgba(0, 0, 0, 0);;
+	}
+
+#extratodata {
+	position: absolute; 
+	left: 20px;   
+	top: 120px;   
+    width: 190px; height: 20px; font-size: 20px;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+#extratoparasimplesconferencia {
+	position: absolute; 
+	left: 20px;   
+	top: 318px;   
+    width: 555px; height: 20px; font-size: 20px; text-align: center;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+	}
+ #extratonumeroconta {
+	position: absolute; 
+	left: 20px;   
+	top: 201px;   
+    width: 190px; height: 20px; font-size: 20px;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+    #extratonomecliente {
+	position: absolute; 
+	left: 20px;   
+	top: 239px;   
+    width: 555px; height: 20px; font-size: 20px;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+#extratoagencia {
+	position: absolute; 
+	left: 20px;   
+	top: 159px;   
+    width: 190px; height: 20px; font-size: 20px;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    
+	}
+#extratomovimentacao {
+	position: absolute; 
+	left: 20px;   
+	top: 393px;   
+    width: 190px; height: 20px; font-size: 20px;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    
+	}   
+#extratohora {
+	position: absolute; 
+	left: 380px;   
+	top: 120px;   
+    width: 190px; height: 20px; font-size: 20px;
+	color: #080000;
+	background-color:rgba(0, 0, 0, 0);
+    font-family: Verdana, sans-serif;
+    border: Transparent;
+	}
+    .moverdiv {
+  -webkit-animation-name: moverdiva;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes moverdiva {
+0% {left:0px; top:0px;}
+  50%  {left:966px; top:584px;}
+  100%   {left:0px; top:0px;}
+}    
+    
+</style>
+<script>
+
+var numeroconta = "163866"
+var nomecliente = "JOSENILDO BARROS"
+var historicoextrato = ["25/03/23", "Deposito", "1800","21/02/23", "Deposito", "1000","14/01/23", "Saque", "2000"]
+var valorEmConta = "1952"
+
+ function funcaomove(){
+
+    document.getElementById('extrato').className = 'moverdiv'; 
+              setTimeout(function() {
+                document.getElementById('extrato').className = 'none';
+                }, 800)
+ }
+
+
+ var data = new Date().toLocaleDateString('pt-BR');
+ var hora = new Date().toLocaleTimeString('pt-BR');
+
+
+var extratodata = document.getElementById('extratodata'); 
+extratodata = document.getElementById('extratodata'); 
+extratodata.innerHTML =  " Data: " + data;
+
+var extratohora = document.getElementById('extratohora'); 
+extratohora = document.getElementById('extratohora'); 
+extratohora.innerHTML =  " Hora: " + hora;
+
+var extratonumeroconta = document.getElementById('extratonumeroconta'); 
+extratonumeroconta = document.getElementById('extratonumeroconta'); 
+extratonumeroconta.innerHTML =  "CONTA: " + numeroconta;
+
+var extratonomecliente = document.getElementById('extratonomecliente'); 
+extratonomecliente = document.getElementById('extratonomecliente'); 
+extratonomecliente.innerHTML =  "CLIENTE: " + nomecliente;
+
+//------------------
+var datamovimentacao1 = document.getElementById('datamovimentacao1'); 
+datamovimentacao1 = document.getElementById('datamovimentacao1'); 
+datamovimentacao1.innerHTML = historicoextrato[0] ;
+
+var tipomovimentacao1 = document.getElementById('tipomovimentacao1'); 
+tipomovimentacao1 = document.getElementById('tipomovimentacao1'); 
+tipomovimentacao1.innerHTML = historicoextrato[1] ;
+
+var valormovimentacao1 = document.getElementById('valormovimentacao1'); 
+valormovimentacao1 = document.getElementById('valormovimentacao1'); 
+valormovimentacao1.innerHTML = "R$" + historicoextrato[2]+",00" ;
+
+var datamovimentacao2 = document.getElementById('datamovimentacao2'); 
+datamovimentacao2 = document.getElementById('datamovimentacao2'); 
+datamovimentacao2.innerHTML = historicoextrato[3] ;
+
+var tipomovimentacao2 = document.getElementById('tipomovimentacao2'); 
+tipomovimentacao2 = document.getElementById('tipomovimentacao2'); 
+tipomovimentacao2.innerHTML = historicoextrato[4] ;
+
+var valormovimentacao2 = document.getElementById('valormovimentacao2'); 
+valormovimentacao2 = document.getElementById('valormovimentacao2'); 
+valormovimentacao2.innerHTML = "R$" + historicoextrato[5]+",00" ;
+
+var datamovimentacao3 = document.getElementById('datamovimentacao3'); 
+datamovimentacao3 = document.getElementById('datamovimentacao3'); 
+datamovimentacao3.innerHTML = historicoextrato[6] ;
+
+var tipomovimentacao3 = document.getElementById('tipomovimentacao3'); 
+tipomovimentacao3 = document.getElementById('tipomovimentacao3'); 
+tipomovimentacao3.innerHTML = historicoextrato[7] ;
+
+var valormovimentacao3 = document.getElementById('valormovimentacao3'); 
+valormovimentacao3 = document.getElementById('valormovimentacao3'); 
+valormovimentacao3.innerHTML = "R$" + historicoextrato[8]+",00" ;
+
+var saldoemdinheiro = document.getElementById('saldoemdinheiro'); 
+saldoemdinheiro = document.getElementById('saldoemdinheiro'); 
+saldoemdinheiro.innerHTML = "R$" + valorEmConta+",00" ;
+
+
+
+</script>
+</html>
