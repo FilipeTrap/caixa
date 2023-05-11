@@ -17,6 +17,8 @@
 <img id="entradacartao" src="maquinaCartaoBlock.png" alt="">
 
 <img id="senhacartao1" src="senhacartao1.png" alt="">
+<img id="senhacartao2" src="senhacartao2.png" alt="">
+<img id="senhacartao3" src="senhacartao3.png" alt="">
 
 <img id="cartao113866" src="cartao113866.png" alt="">
 <img id="cartao163961" src="cartao163961.png" alt="">
@@ -28,11 +30,11 @@
 
 <img id="entradacartaoFrente" src="maquinaCartaofrente.png" style="visibility:hidden" alt="">
 
-<button id="tirarcartao"onclick="tirarcartao()" style="visibility:hidden"></button>
+<!-- <button id="tirarcartao"onclick="tirarcartao()" style="visibility:hidden"></button> -->
 <button id="tirarcartaoantes"onclick="tirarcartaoantes()" style="visibility:hidden"></button>
 
 
-<button id="botaoinicial" onclick="botaoinicial()"></button>
+<button id="botaoinicial" onclick="voltarTelainicial()"></button>
 
 <button id="botao1" class="botao1"  style="visibility:hidden"></button>
 <button id="botao2" class="botao2"  style="visibility:hidden"></button>
@@ -43,7 +45,7 @@
 <button id="botao7" class="botao7"  style="visibility:hidden"></button>
 <button id="botao8" class="botao8"  style="visibility:hidden"></button>
 
-<input type="number" style="visibility:hidden" id="insiraValor" onkeydown="verificarEnter(event)">
+<input type="number" style="visibility:hidden" id="insiraValor" onkeydown="verificarEnter(event, valorEmConta)">
 
 <div id="campo1"></div>
 <input type="text" id="campo1"  disabled="true">
@@ -217,8 +219,8 @@
 <style>
     #guardardinheiro {
 	position: absolute; 
-	left: -96px; /* posiciona a 90px para a esquerda */ 
-	top: 383px; /* posiciona a 70px para baixo */
+	left: -96px; 
+	top: 383px; 
     width: 191px; height: 130px; font-size: 24px;
      /* background-color: Transparent;
     border: Transparent;  */
@@ -234,8 +236,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 #insiraValor {
 	position: absolute; 
-	left: 457px; /* posiciona a 90px para a esquerda */ 
-	top: 195px; /* posiciona a 70px para baixo */
+	left: 457px; 
+	top: 195px; 
     width: 191px; height: 30px; font-size: 24px;
     /* background-color: Transparent;*/
     border: Transparent; 
@@ -671,15 +673,31 @@ left: 10px;
 
 #gifsenha {
     position: absolute; 
-    left: 373px; /* posiciona a 90px para a esquerda */ 
-    top: 156px; /* posiciona a 70px para baixo */
+    left: 373px; 
+    top: 156px; 
     width: 275px; height: 64px;
 }
 
 #senhacartao1 {
 	position: absolute; 
-	left: 65px; /* posiciona a 90px para a esquerda */ 
-	top: 586px; /* posiciona a 70px para baixo */
+	left: 65px; 
+	top: 586px; 
+    width: 220px; height: 191px; text-align: center; font-size: 24px;
+    background-color: Transparent;
+    border: Transparent;
+	} 
+  #senhacartao2 {
+	position: absolute; 
+	left: 454px; 
+	top: 586px; 
+    width: 220px; height: 191px; text-align: center; font-size: 24px;
+    background-color: Transparent;
+    border: Transparent;
+	} 
+  #senhacartao3 {
+	position: absolute; 
+	left: 839px; 
+	top: 586px; 
     width: 220px; height: 191px; text-align: center; font-size: 24px;
     background-color: Transparent;
     border: Transparent;
@@ -687,115 +705,115 @@ left: 10px;
 
 #campo1 {
     position: absolute; 
-    left: 183px; /* posiciona a 90px para a esquerda */ 
-    top: 148px; /* posiciona a 70px para baixo */
+    left: 183px; 
+    top: 148px; 
     width: 275px; height: 46px; text-align: center; font-size: 20px;
     color: #070646;
     background-color: rgba(0, 0, 0, 0);
     font-family: Calibri, sans-serif;
     font-weight: bold;
-    line-height: 46px; /* altura do campo */
+    line-height: 46px; 
     border: Transparent;
 }
 #campo2 {
     position: absolute; 
-    left: 565px; /* posiciona a 90px para a esquerda */ 
-    top: 148px; /* posiciona a 70px para baixo */
+    left: 565px; 
+    top: 148px; 
     width: 275px; height: 46px; text-align: center; font-size: 20px;
     color: #070646;
     background-color: rgba(0, 0, 0, 0);
     font-family: Calibri, sans-serif;
     font-weight: bold;
-    line-height: 46px; /* altura do campo */
+    line-height: 46px; 
     border: Transparent;
 }
 #campo3 {
     position: absolute; 
     left: 183px; /* era 2 posiciona a 90px para a esquerda */ 
-    top: 245px; /* posiciona a 70px para baixo */
+    top: 245px; 
     width: 275px; height: 46px; text-align: center; font-size: 20px;
     color: #070646;
     background-color: rgba(0, 0, 0, 0);
     font-family: Calibri, sans-serif;
     font-weight: bold;
-    line-height: 46px; /* altura do campo */
+    line-height: 46px; 
     border: Transparent;
 }
 #campo4 {
     position: absolute; 
-    left: 565px; /* posiciona a 90px para a esquerda */ 
-    top: 245px; /* posiciona a 70px para baixo */
+    left: 565px; 
+    top: 245px; 
     width: 275px; height: 46px; text-align: center; font-size: 20px;
     color: #070646;
     background-color: rgba(0, 0, 0, 0);
     font-family: Calibri, sans-serif;
     font-weight: bold;
-    line-height: 46px; /* altura do campo */
+    line-height: 46px; 
     border: Transparent;
 }
 
 #campo5 {
     position: absolute; 
-    left: 183px; /* posiciona a 90px para a esquerda */ 
-    top: 341px; /* posiciona a 70px para baixo */
+    left: 183px; 
+    top: 341px; 
     width: 275px; height: 46px; text-align: center; font-size: 20px;
     color: #070646;
     background-color: rgba(0, 0, 0, 0);
     font-family: Calibri, sans-serif;
     font-weight: bold;
-    line-height: 46px; /* altura do campo */
+    line-height: 46px; 
     border: Transparent;
 }
 #campo6 {
     position: absolute; 
-    left: 565px; /* posiciona a 90px para a esquerda */ 
-    top: 343px; /* posiciona a 70px para baixo */
+    left: 565px; 
+    top: 343px; 
     width: 275px; height: 46px; text-align: center; font-size: 20px;
     color: #070646;
     background-color: rgba(0, 0, 0, 0);
     font-family: Calibri, sans-serif;
     font-weight: bold;
-    line-height: 46px; /* altura do campo */
+    line-height: 46px; 
     border: Transparent;
 }
 
 #campo7 {
     position: absolute; 
-    left: 183px; /* posiciona a 90px para a esquerda */ 
-    top: 445px; /* posiciona a 70px para baixo */
+    left: 183px; 
+    top: 445px; 
     width: 275px; height: 46px; text-align: center; font-size: 20px;
     color: #070646;
     background-color: rgba(0, 0, 0, 0);
     font-family: Calibri, sans-serif;
     font-weight: bold;
-    line-height: 46px; /* altura do campo */
+    line-height: 46px; 
     border: Transparent;
 }
 #campo8 {
     position: absolute; 
-    left: 565px; /* posiciona a 90px para a esquerda */ 
-    top: 442px; /* posiciona a 70px para baixo */
+    left: 565px; 
+    top: 442px; 
     width: 275px; height: 46px; text-align: center; font-size: 20px;
     color: #070646;
     background-color: rgba(0, 0, 0, 0);
     font-family: Calibri, sans-serif;
     font-weight: bold;
-    line-height: 46px; /* altura do campo */
+    line-height: 46px; 
     border: Transparent;
 }
 
-#tirarcartao {
+/* #tirarcartao {
 	position: absolute; 
-	left: 1022px; /* posiciona a 90px para a esquerda */ 
-	top: 0px; /* posiciona a 70px para baixo */
+	left: 1022px; 
+	top: 0px; 
     width: 260px; height: 244px; text-align: center; font-size: 24px;
     background-color: Transparent;
     border: Transparent;
-	}  
+	}   */
 #tirarcartaoantes {
 	position: absolute; 
-	left: 1022px; /* posiciona a 90px para a esquerda */ 
-	top: 0px; /* posiciona a 70px para baixo */
+	left: 1022px; 
+	top: 0px; 
     width: 260px; height: 244px; text-align: center; font-size: 24px;
     background-color: Transparent;
     border: Transparent;
@@ -907,24 +925,24 @@ left: 10px;
 
 #buttoncartao113866 {
 	position: absolute; 
-	left: 8px; /* posiciona a 90px para a esquerda */ 
-	top: 584px; /* posiciona a 70px para baixo */
+	left: 8px; 
+	top: 584px; 
     width: 364px; height: 207px; text-align: center; font-size: 24px;
     background-color: Transparent;
     border: Transparent;
 	} 
 #buttoncartao163961 {
 	position: absolute; 
-	left: 385px; /* posiciona a 90px para a esquerda */ 
-	top: 584px; /* posiciona a 70px para baixo */
+	left: 385px; 
+	top: 584px; 
     width: 364px; height: 207px; text-align: center; font-size: 24px;
     background-color: Transparent;
     border: Transparent;
 } 
 #buttoncartao164229 {
 	position: absolute; 
-	left: 759px; /* posiciona a 90px para a esquerda */ 
-	top: 584px; /* posiciona a 70px para baixo */
+	left: 759px; 
+	top: 584px; 
     width: 364px; height: 207px; text-align: center; font-size: 24px;
     background-color: Transparent;
     border: Transparent;	
@@ -932,21 +950,21 @@ left: 10px;
 
 #cartao113866 {
 	position: absolute; 
-	left: 8px; /* posiciona a 90px para a esquerda */ 
-	top: 584px; /* posiciona a 70px para baixo */
+	left: 8px; 
+	top: 584px; 
     width: 364px; height: 207px; text-align: center; font-size: 24px;
     
 	} 
 #cartao163961 {
 	position: absolute; 
-	left: 385px; /* posiciona a 90px para a esquerda */ 
-	top: 584px; /* posiciona a 70px para baixo */
+	left: 385px; 
+	top: 584px; 
     width: 364px; height: 207px; text-align: center; font-size: 24px;
 	} 
 #cartao164229 {
 	position: absolute; 
-	left: 759px; /* posiciona a 90px para a esquerda */ 
-	top: 584px; /* posiciona a 70px para baixo */
+	left: 759px; 
+	top: 584px; 
     width: 364px; height: 207px; text-align: center; font-size: 24px;
 	} 
 
@@ -957,8 +975,8 @@ html {
 
 #ocultarextrato {
 	position: absolute; 
-	left: 317px; /* posiciona a 90px para a esquerda */ 
-	top: 10px; /* posiciona a 70px para baixo */
+	left: 317px; 
+	top: 10px; 
     width: 458px; height: 811px; text-align: center; font-size: 24px;
     background-color: Transparent; 
     border: Transparent;
@@ -966,8 +984,8 @@ html {
 
 #botaoinicial {
 	position: absolute; 
-	left: 69px; /* posiciona a 90px para a esquerda */ 
-	top: 38px; /* posiciona a 70px para baixo */
+	left: 69px; 
+	top: 38px; 
     width: 898px; height: 504px; text-align: center; font-size: 24px;
     background-color: Transparent;
     /*border: Transparent;*/
@@ -976,8 +994,8 @@ html {
 
     .botao1 {
     position: absolute; 
-    left: 69px; /* posiciona a 90px para a esquerda */ 
-    top: 128px; /* posiciona a 70px para baixo */
+    left: 69px; 
+    top: 128px; 
     width: 96px;
     height: 75px;
     text-align: center;
@@ -988,24 +1006,24 @@ html {
 
 .botao2 {
 	position: absolute; 
-	left: 868px; /* posiciona a 90px para a esquerda */ 
-	top: 129px; /* posiciona a 70px para baixo */
+	left: 868px; 
+	top: 129px; 
     width: 96px; height: 75px; text-align: center; font-size: 24px;
     background-color: Transparent;
     /*border: Transparent;*/
 	}
 .botao3 {
 	position: absolute; 
-	left: 69px; /* posiciona a 90px para a esquerda */ 
-	top: 231px; /* posiciona a 70px para baixo */
+	left: 69px; 
+	top: 231px; 
     width: 96px; height: 75px; text-align: center; font-size: 24px;
     background-color: Transparent;
     /*border: Transparent;*/
 	}
 .botao4 {
 	position: absolute; 
-	left: 869px; /* posiciona a 90px para a esquerda */ 
-	top: 231px; /* posiciona a 70px para baixo */
+	left: 869px; 
+	top: 231px; 
     width: 96px; height: 75px; text-align: center; font-size: 24px;
     background-color: Transparent;
     /*border: Transparent;*/
@@ -1044,15 +1062,15 @@ html {
 	}
 #tela {
 	position: absolute; 
-	left: 178px; /* posiciona a 90px para a esquerda */ 
-	top: 34px; /* posiciona a 70px para baixo */
+	left: 178px; 
+	top: 34px; 
     width: 678px; height: 507px; text-align: center; font-size: 24px;
 	}  
 
  #entradacartao {
 	position: absolute; 
-	left: 1022px; /* posiciona a 90px para a esquerda */ 
-	top: 0px; /* posiciona a 70px para baixo */
+	left: 1022px; 
+	top: 0px; 
     width: 260px; height: 244px; text-align: center; font-size: 24px;
 
 	}   
@@ -1060,15 +1078,15 @@ html {
     
 #entradacartaoFrente {
 	position: absolute; 
-	left: 1022px; /* posiciona a 90px para a esquerda */ 
-	top: 0px; /* posiciona a 70px para baixo */
+	left: 1022px; 
+	top: 0px; 
     width: 260px; height: 244px; text-align: center; font-size: 24px;
 
 	}  
 #backGrondCaixa {
 	position: absolute; 
-	left: 0px; /* posiciona a 90px para a esquerda */ 
-	top: 0px; /* posiciona a 70px para baixo */
+	left: 0px; 
+	top: 0px; 
     width: 1024px; height: 576px; text-align: center; font-size: 24px;
 	}
 
@@ -1297,22 +1315,24 @@ width: 459px; height: 810px;  font-size: 50px;
 //O BANCO DE DASDOS
 let arraynumeroconta = ["113866", "163961", "164229"]
 let arraynomes = ["Filipe Gomes", "Bruce Dickinson", "Tom Araya"]
-let arraysenha = ["1987", "0000", "1234"]
-let arraysaldo = ["19000", "14000", "32"]
-let historico0 = ["25/03/23", "Deposito", "800","21/02/23", "Deposito", "1000","14/01/23", "Saque", "2000"]
-let historico1 = ["22/09/22","Deposito", "10000","14/01/23", "Deposito", "1000","25/03/23", "Saque", "320"]
-let historico2 = ["25/01/23","Saque", "320", "02/02/23","Saque", "200","20/03/23", "Saque", "200"]
+let arraysenha = ["1987", "9876", "0385"]
+let arraysaldo = [19000, 14000, 32]
+let historico0 = ["25/03/2023", "Deposito", "800","21/02/2023", "Deposito", "1000","14/01/2023", "Saque", "2000"]
+let historico1 = ["22/09/2022","Deposito", "10000","14/01/2023", "Deposito", "1000","25/03/2023", "Saque", "320"]
+let historico2 = ["25/01/2023","Saque", "320", "02/02/2023","Saque", "200","20/03/2023", "Saque", "200"]
 // DO SISTEMA
 
 
 
-var numeroconta = "113866"
-var nomecliente = "JOSENILDO BARROS"
-var historicoextrato = ["25/03/23", "Deposito", "1800","21/02/23", "Deposito", "1000","14/01/23", "Saque", "2000"]
-var valorEmConta = "1952"
+var numeroconta = ""
+var nomecliente = ""
+var historicoextrato = []
+// var historicoREAL;
+// var saldoREAL;
+var valorEmConta;
 var data = new Date().toLocaleDateString('pt-BR');
 var hora = new Date().toLocaleTimeString('pt-BR');
-var senhareal = "1987"
+var senhareal = ""
 
 
 var campo1 = document.getElementById('campo1');  
@@ -1343,12 +1363,9 @@ var tipomovimentacao3 = document.getElementById('tipomovimentacao3');
 var valormovimentacao3 = document.getElementById('valormovimentacao3'); 
 var saldoemdinheiro = document.getElementById('saldoemdinheiro'); 
 
-function botaoinicial(){
 
-voltarTelainicial()
-}
 function voltarTelainicial(){
-    if(cartaoentrou !== ""){
+    if(cartaoentrou != ""){
         tirarcartao()
     }
 limpartudo()
@@ -1357,8 +1374,8 @@ campo1 = document.getElementById('campo1');
 campo1.innerHTML =  " SAQUE ";
 campo2 = document.getElementById('campo2'); 
 campo2.innerHTML =  " EXTRATO ";
-campo3 = document.getElementById('campo3'); 
-campo3.innerHTML =  " TRANSFERÊNCIA ";
+//campo3 = document.getElementById('campo3'); 
+//campo3.innerHTML =  " TRANSFERÊNCIA ";
 tela.setAttribute('src', 'caixaTitle.png');
 document.getElementById('botao1').style.visibility='visible';
 
@@ -1368,15 +1385,13 @@ document.getElementById('botao2').style.visibility='visible';
 document.getElementById("botao1").setAttribute("onclick", "primeiraoperação('saque')");
 document.getElementById("botao2").setAttribute("onclick", "primeiraoperação('extrato')");
 
-// document.getElementById('botaosaque').style.visibility='visible'; saque()
-// document.getElementById('botaoextrato').style.visibility='visible';
 }
 
 function primeiraoperação(tipo){
 operacao = tipo
 limpartudo()
-    // document.getElementById("saque").style.visibility='hidden';
-// document.getElementById("extrato").style.visibility='hidden';
+
+
 tela.setAttribute('src', 'insiraCartao.png');
 document.getElementById('entradacartaoFrente').style.visibility='visible';
 
@@ -1388,6 +1403,7 @@ document.getElementById('buttoncartao164229').style.visibility='visible';
 function entrandocartao1(){
 
 cartaoentrou = 1
+
 senhareal = arraysenha[0]
 
 //document.getElementById('tirarcartao').style.visibility='visible';
@@ -1403,12 +1419,8 @@ document.getElementById('buttoncartao113866').style.visibility='hidden';
           setTimeout(function() {
             document.getElementById('cartao113866').className = 'none';
             document.getElementById("cartao113866").style.transform = "rotate(90deg)";
-            if(operacao == "saque"){
-                carregando("saque")
-            }
-            if(operacao == "extrato"){
-                carregando("extrato")
-            }
+
+            carregando(operacao);
 
             }, 800)
 
@@ -1417,6 +1429,7 @@ document.getElementById('buttoncartao113866').style.visibility='hidden';
 function entrandocartao2(){
 
 cartaoentrou = 2
+
 senhareal = arraysenha[1]
 
 //document.getElementById('tirarcartao').style.visibility='visible';
@@ -1432,12 +1445,8 @@ document.getElementById('buttoncartao113866').style.visibility='hidden';
       setTimeout(function() {
         document.getElementById('cartao163961').className = 'none';
         document.getElementById("cartao163961").style.transform = "rotate(90deg)";
-        if(operacao == "saque"){
-            carregando("saque")
-        }
-        if(operacao == "extrato"){
-            carregando("extrato")
-        }
+       
+        carregando(operacao);
 
         }, 800)
 
@@ -1446,6 +1455,7 @@ document.getElementById('buttoncartao113866').style.visibility='hidden';
 function entrandocartao3(){
 
 cartaoentrou = 3
+
 senhareal = arraysenha[2]
 
 //document.getElementById('tirarcartao').style.visibility='visible';
@@ -1461,12 +1471,8 @@ document.getElementById('buttoncartao113866').style.visibility='hidden';
       setTimeout(function() {
         document.getElementById('cartao164229').className = 'none';
         document.getElementById("cartao164229").style.transform = "rotate(90deg)";
-        if(operacao == "saque"){
-            carregando("saque")
-        }
-        if(operacao == "extrato"){
-            carregando("extrato")
-        }
+        
+        carregando(operacao);
 
         }, 800)
 
@@ -1751,7 +1757,7 @@ function tirarcartao(){
                 }, 800)
     }
     cartaoentrou = 0
-    document.getElementById('tirarcartao').style.visibility='hidden';
+    //document.getElementById('tirarcartao').style.visibility='hidden';
 
 
 }
@@ -1776,7 +1782,7 @@ function tirarcartaoantes(){
 }
 
 
-function faznada(){}
+
 
 function limpartudo(){
   document.getElementById('insiraValor').style.visibility='hidden';
@@ -1893,9 +1899,10 @@ function saque(codcliente){
     }
     limpartudo()
     atualizarextrato()
-    escolherValorSaque()
+    escolherValorSaque(valorEmConta)
 }
-function escolherValorSaque(){
+
+function escolherValorSaque(valorEmConta){
     tela.setAttribute('src', 'telaescolhervalorsaque.png');
 
     document.getElementById('insiraValor').style.visibility='visible';
@@ -1908,42 +1915,42 @@ document.getElementById('botao1').style.visibility='visible';
 document.getElementById("botao1").setAttribute("onclick", "tirardinheiro('20')");
 document.getElementById("campo1").style.left = "127px";
 }
-if (valorEmConta => 40){
+else if (valorEmConta => 40){
 campo3 = document.getElementById('campo3'); 
 campo3.innerHTML =  " R$ 40,00 ";
 document.getElementById('botao3').style.visibility='visible';
 document.getElementById("botao3").setAttribute("onclick", "tirardinheiro('40')");
 document.getElementById("campo3").style.left = "127px";
 }
-if (valorEmConta => 50){
+else if (valorEmConta => 50){
 campo5 = document.getElementById('campo5'); 
 campo5.innerHTML =  " R$ 50,00 ";
 document.getElementById('botao5').style.visibility='visible';
 document.getElementById("botao5").setAttribute("onclick", "tirardinheiro('50')");
 document.getElementById("campo5").style.left = "127px";
 }
-if (valorEmConta => 100){
+else if (valorEmConta => 100){
 campo7 = document.getElementById('campo7'); 
 campo7.innerHTML =  " R$ 100,00 ";
 document.getElementById('botao7').style.visibility='visible';
 document.getElementById("botao7").setAttribute("onclick", "tirardinheiro('100')");
 document.getElementById("campo7").style.left = "127px";
 }
-if (valorEmConta => 300){
+else if (valorEmConta => 300){
 campo2 = document.getElementById('campo2'); 
 campo2.innerHTML =  " R$ 300,00 ";
 document.getElementById('botao2').style.visibility='visible';
 document.getElementById("botao2").setAttribute("onclick", "tirardinheiro('300')");
 document.getElementById("campo2").style.left = "633px";
 }
-if (valorEmConta => 500){
+else if (valorEmConta => 500){
 campo4 = document.getElementById('campo4'); 
 campo4.innerHTML =  " R$ 500,00 ";
 document.getElementById('botao4').style.visibility='visible';
 document.getElementById("botao4").setAttribute("onclick", "tirardinheiro('500')");
 document.getElementById("campo4").style.left = "633px";
 }
-if (valorEmConta => 1000){
+else if (valorEmConta => 1000){
 campo6 = document.getElementById('campo6'); 
 campo6.innerHTML =  " R$ 1000,00 ";
 document.getElementById('botao6').style.visibility='visible';
@@ -1960,11 +1967,21 @@ document.getElementById("botao8").setAttribute("onclick", "voltarTelainicial()")
 
 
 
-function verificarEnter(event) {
+function verificarEnter(event,valorEmConta) {
+
+  
+
   if (event.keyCode === 13) {
-    const valor = document.getElementById('insiraValor').value;
-    tirardinheiro(valor);
+    let valor = document.getElementById('insiraValor').value;
+    if (valorEmConta >= valor){
+      tirardinheiro(valor);
+    }
+    else{
+      alert("Valor invalido!")
+    }
+    
   }
+
 }
 
 
@@ -1982,6 +1999,7 @@ return escolherValorSaque()
 
 dinheiroimpresso = valor    
 
+valorEmConta = valorEmConta - valor
 
 while (dinheiroimpresso > 0) {
 
@@ -2059,9 +2077,29 @@ else  if (arraydinheiroimpresso[i] == 100) {
 }
 
 
+//trabalhar aqui
 
 
+if(numeroconta == 113866){
+  
+  arraysaldo[0] = valorEmConta;
+  historico0.unshift(valor);
+  historico0.unshift("Saque");
+  historico0.unshift(new Date().toLocaleDateString());
 
+}
+if(numeroconta == 163961){
+  arraysaldo[1] = valorEmConta;
+  historico1.unshift(valor);
+  historico1.unshift("Saque");
+  historico1.unshift(new Date().toLocaleDateString());
+}
+if(numeroconta == 164229){
+  arraysaldo[2] = valorEmConta;
+  historico2.unshift(valor);
+  historico2.unshift("Saque");
+  historico2.unshift(new Date().toLocaleDateString());
+}
 
 document.getElementById('dinheirosaque').className = 'mostrardinheiro'; 
     document.getElementById("dinheirosaque").style.left = "200px";
@@ -2120,6 +2158,7 @@ function imprimirExtrato(codcliente){
                 document.getElementById("ocultarextrato").style.visibility='visible';
                 }, 800)
 }
+
 function guardarextrato(){
     document.getElementById("ocultarextrato").style.visibility='hidden';
     //colocar animação
