@@ -1936,7 +1936,15 @@ function escolherValorSaque(valorEmConta) {
   document.getElementById('botao8').setAttribute('onclick', 'voltarTelainicial()');
 }
 
+function verificarEnter(event, valorEmConta) {
+  const valorDigitado = document.getElementById("insiraValor").value;
+        
+    if (event.key === "Enter" && valorEmConta > valorDigitado && valorDigitado <= 2000) {
+       console.log("Valor digitado:", valorDigitado);
+       tirardinheiro(valorDigitado);
 
+    }
+}
 
 
 let dinheiroimpresso
